@@ -1,0 +1,162 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/noto-nastaliq-urdu/index.css';
+
+:root {
+  /* Typography */
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Inter', serif;
+
+  --font-size-label: 12px;
+  --font-size-base: 13px;
+  --font-size-table: 13px;
+  --font-size-section: 15px;
+  --font-size-title: 20px;
+  --line-height-standard: 1.4;
+
+  /* Color Palette - Professional Desktop Accounting */
+  --color-bg-page: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-border: #d9dde3;
+  --color-border-light: #e5e7eb;
+  --color-hover: #f9fafb;
+  --color-header-bg: #f3f4f6;
+
+  /* Typography Colors */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  /* Sidebar Tokens */
+  --color-sidebar-bg: #1e293b;
+  --color-sidebar-text: #cbd5e1;
+  --color-sidebar-active: #334155;
+  --color-sidebar-group: #94a3b8;
+
+  /* Single Brand Accent - Deep Teal */
+  --color-accent: #0f766e;
+  --color-accent-hover: #115e59;
+  --color-accent-subtle: #f0fdfa;
+  --color-accent-border: #99f6e4;
+
+  /* Semantic Status Colors (Used ONLY for meaning) */
+  --color-success: #15803d;
+  --color-success-bg: #f0fdf4;
+  --color-success-border: #bbf7d0;
+
+  --color-warning: #b45309;
+  --color-warning-bg: #fffbeb;
+  --color-warning-border: #fde68a;
+
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-danger-border: #fecaca;
+
+  --color-info: #1d4ed8;
+  --color-info-bg: #eff6ff;
+  --color-info-border: #bfdbfe;
+
+  /* Radii */
+  --radius-input: 4px;
+  --radius-btn: 4px;
+  --radius-badge: 4px;
+  --radius-panel: 6px;
+  --radius-modal: 6px;
+
+  /* Spacing Scale */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+
+  /* Shadows (Only for modals and dropdowns; everything else flat) */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+
+  /* Element Dimensions */
+  --sidebar-width: 220px;
+  --topbar-height: 48px;
+  --input-height: 32px;
+  --btn-height: 32px;
+  --table-row-height: 34px;
+}
+
+/* Global Application Rules */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-standard);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Urdu font family when dir="rtl" */
+[dir='rtl'],
+.font-urdu {
+  font-family: var(--font-urdu);
+  line-height: 1.7;
+}
+
+/* Tabular Numbers for all money and numerical fields */
+.tabular-nums,
+.money-cell,
+.num-cell {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Keyboard focus ring */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* Print Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  aside,
+  header,
+  .no-print,
+  button,
+  .action-cell,
+  .toolbar-row {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th,
+  td {
+    border: 1px solid #000000 !important;
+    padding: 4px 8px !important;
+    color: #000000 !important;
+  }
+
+  th {
+    background-color: #eeeeee !important;
+  }
+}
